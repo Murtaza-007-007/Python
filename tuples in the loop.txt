@@ -1,0 +1,26 @@
+tuples in the loop
+
+
+fruits = ("apple", "banana", "cherry","mango","almonds","avacado")
+
+(*apple, banana, cherry)=fruits
+
+print(*apple)
+
+print(banana)
+
+print(cherry)
+
+
+
+fruits = ("apple", "banana", "cherry","mango","almonds","avacado")
+for i in range(len(fruits)):
+	print(fruits)
+    
+    
+    
+fruits = ("apple", "banana", "cherry","mango","almonds","avacado")
+i=0
+while i<4:
+	print(fruits[i])
+	i=i+1
