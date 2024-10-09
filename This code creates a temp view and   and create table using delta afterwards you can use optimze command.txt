@@ -1,0 +1,22 @@
+
+This code first creates a temporary view csv_data_cleaned where the ListPrice column is trimmed to remove any leading or trailing spaces, effectively renaming it to a valid column name without spaces. Then, it creates a Delta table csv_data_11 using this cleaned view. This approach ensures that the column names comply with Delta Lake's requirements, avoiding the error related to invalid characters in column names.
+
+
+
+spark.sql("""
+CREATE OR REPLACE TEMPORARY VIEW csv_data_cleaned AS
+SELECT 
+  ProductID, 
+  ProductName, 
+  Category, 
+  TRIM(` ListPrice `) AS ListPrice
+FROM csv_data
+""")
+
+
+spark.sql("DROP TABLE IF EXISTS csv_data_11")
+
+spark.sql("""CREATE TABLE csv_data_11
+USING DELTA 
+AS SELECT * FROM csv_data_cleaned
+""")
