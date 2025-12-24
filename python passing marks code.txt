@@ -1,0 +1,15 @@
+
+print("Please enter passing marks to check if the student is passed or failed")
+a=int(input())
+marks=a
+result=("Pass with distinction" if marks>=70 
+ else"pass" if marks>=50 
+ else"fail")
+
+print(result)
+
+
+
+
+
+
