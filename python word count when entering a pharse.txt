@@ -1,0 +1,21 @@
+import time
+
+phrase="python is good for data analysis and cleaning and transfromtion purposes"
+word_count=len(phrase.split())
+
+print(f"This is fast :\n({phrase})\n")
+input("please enter to start")
+
+strat_time=time.time()
+#for i in range(word_count):
+attempt=input("Type here:  ")
+end_time=time.time()
+
+time_taken=(end_time-strat_time)/60
+wpm=round(word_count/time_taken,2)
+
+
+if attempt==phrase:
+   print(f"\nSuccess! Your speed: {wpm} WPM")
+else:
+  print(f"\nNope. Try again.")
